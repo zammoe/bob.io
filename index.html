@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+	<div id="main">
+
+	</div>
+	<script type="text/javascript">
+
+// функция для получения рандомного цвета
+	function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// конец функции
+
+console.log( getRandomInt(3, 7) );
+
+    var offset=0;
+    for(var x=0; x<10; x++){
+    	var color=getRandomColor()
+    	$("#main").append("<div style='top:0px; left:" + offset + "px; background-color:" + color + "' class='box name"+x+" abs'></div>")
+    	offset=offset+120
+    }
+
+     var offset=0;
+    for(var x=0; x<10; x++){
+    	var color=getRandomColor()
+    	$("#main").append("<div style='top:120px; left:" + offset + "px; background-color:" + color + "' class='box name"+x+" abs'></div>")
+    	offset=offset+120
+    }
+
+	
+	</script>
+	<style type="text/css">
+	.box{
+	height: 100px;
+	width: 100px;
+	background-color: red;
+
+}
+.abs{
+	position: absolute;
+}
+
+</style>
+
+
+</body>
+</html>
